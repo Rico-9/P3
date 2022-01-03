@@ -52,6 +52,47 @@ body, html {
   height: 30px;
 }
 
+.footer {
+  background-color: #353535;
+}
+.footer .container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.footer-logo {
+  color: white;
+  font-family: "Shrikhand", "cursive";
+  margin: 0;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-listElt {
+  margin: 0.5rem 0;
+}
+.footer-listElt:first-child {
+  margin-top: 0;
+}
+.footer-listElt:last-child {
+  margin-bottom: 0;
+}
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+.footer-link:hover {
+  text-decoration: underline;
+}
+.footer-icon {
+  width: 1.2rem;
+  margin-right: 0.5rem;
+}
+
 .loader {
   position: fixed;
   height: 100%;
@@ -95,6 +136,10 @@ body, html {
   text-align: center;
 }
 
+.location-icon::before {
+  margin-left: -36px;
+}
+
 .local {
   display: flex;
   justify-content: center;
@@ -102,7 +147,6 @@ body, html {
   background-color: #f3f3f3;
   font-size: 1.1rem;
   position: relative;
-  font-size: medium;
 }
 .local-icon {
   margin-right: 1rem;
@@ -111,22 +155,12 @@ body, html {
   font-weight: 700;
 }
 
-.i-fa-map-marker-alt .location-icon{
-  margin-left: -50px;
-  margin-right: 20px;
-}
-
-::before{
-  margin-left: -30px;
-  margin-right: 20px;
-}
-
 .subtitle {
   margin-bottom: 30px;
 }
 
 .hero {
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 4rem 2rem;
   text-align: center;
   background-color: #fafafa;
 }
@@ -165,6 +199,7 @@ body, html {
 
 .tuto {
   padding: 2rem 1rem;
+  padding: 2rem 1rem 4rem 1rem;
 }
 .tuto-title {
   margin-top: 0;
@@ -222,6 +257,10 @@ body, html {
 .tuto-icon {
   margin-right: 1rem;
   color: #7e7e7e;
+}
+
+span.text {
+  font-weight: bold;
 }
 
 .restaurants {
@@ -307,6 +346,7 @@ body, html {
   position: absolute;
   top: 1rem;
   right: 0.75rem;
+  font-weight: bold;
 }
 .card-footer {
   padding: 1rem;
@@ -337,6 +377,20 @@ body, html {
 }
 .card-like {
   background-color: white !important;
+}
+
+a.footer-mentions {
+  color: #fff;
+  text-decoration: none;
+}
+
+i.footer__icon.fas.fa-utensils {
+  margin-right: 10px;
+}
+
+i.footer__icon.fas.fa-hands-helping {
+  margin-right: 10px;
+  margin-left: -6px;
 }
 
 .header--withBackArrow {
@@ -442,6 +496,7 @@ body, html {
   justify-content: center;
   cursor: pointer;
   position: relative;
+  margin-bottom: -20px;
 }
 .menu-btn:hover::before {
   opacity: 1;
@@ -472,6 +527,10 @@ body, html {
 }
 .menu-btn:hover .menu__like--noBg {
   opacity: 0;
+}
+
+i.far.fa-heart.fa-2x {
+  margin-bottom: -14px;
 }
 
 .submenus {
@@ -520,7 +579,30 @@ body, html {
   transform: scale(0);
   max-width: 100%;
 }
-
+.menuItem-delay-0 {
+  height: 60px;
+  width: 350px;
+  border-radius: 15px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  overflow: hidden;
+}
+.menuItem-card:hover .check {
+  width: 60px;
+}
+.menuItem-check {
+  height: 60px;
+  width: 0px;
+  background-color: yellow;
+  border-radius: 0px 15px 15px 0px;
+  transition: width 400ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .menuItem-header {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -635,32 +717,6 @@ body, html {
   animation-delay: 0.8s;
 }
 
-.menuItem delay-0 {
-  height: 60px;
-  width: 350px;
-  border-radius: 15px;
-  background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 10px;
-  overflow: hidden;
-}
-.menuItem delay-0:hover .check{
-  width: 60px;
-}
-
-.check {
-  height: 60px;
-  width: 0px;
-  background-color: yellow;
-  border-radius: 0px 15px 15px 0px;
-  transition: width 400ms ;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .wrapBtn {
   display: flex;
   text-decoration: none;
@@ -691,43 +747,4 @@ body, html {
   color: inherit;
 }
 
-.footer {
-  background-color: #353535;
-}
-.footer .container {
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-}
-.footer-logo {
-  color: white;
-  font-family: "Shrikhand", "cursive";
-  margin: 0;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-.footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer-listElt {
-  margin: 0.5rem 0;
-}
-.footer-listElt:first-child {
-  margin-top: 0;
-}
-.footer-listElt:last-child {
-  margin-bottom: 0;
-}
-.footer-link {
-  color: white;
-  text-decoration: none;
-}
-.footer-link:hover {
-  text-decoration: underline;
-}
-.footer-icon {
-  width: 1.2rem;
-  margin-right: 0.5rem;
-}
+/*# sourceMappingURL=style.css.map */
