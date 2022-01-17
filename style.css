@@ -133,8 +133,11 @@ body, html {
 }
 
 header {
-  box-shadow: 0 2px 4px #636363cc;
   margin-bottom: 3px;
+}
+
+.index-header {
+  box-shadow: 0 2px 4px #636363cc;
 }
 
 .header-logo-wrapper {
@@ -233,6 +236,9 @@ span.location-text {
   display: flex;
   position: relative;
 }
+.tuto-step:hover {
+  background-color: f6f6f6;
+}
 @media (min-width: 64rem) {
   .tuto-step {
     flex: 1;
@@ -270,14 +276,26 @@ span.location-text {
 
 .tuto-icon.fas.fa-mobile-alt {
   margin-top: 3px;
+  color: #9356DC;
 }
 
 .tuto-icon.fas.fa-list-ul {
   margin-top: 3px;
+  color: #9356DC;
 }
 
 .tuto-icon.fas.fa-store {
   margin-top: 3px;
+  color: #9356DC;
+}
+
+.fa-mobile-alt:before {
+  content: "\f3cd";
+  background-color: linear-gradient(#9356DC, #ae80e5);
+}
+
+.tuto-icon fas fa-mobile-alt:hover {
+  background-color: red;
 }
 
 span.text {
@@ -337,10 +355,9 @@ a.resto-btn {
   opacity: 1;
 }
 
-.fas.fa-heart {
+.menu-btn.fas.fa-heart {
   font-size: 1.59rem;
   position: absolute;
-  right: 31px;
   background: linear-gradient(#FF79DA, #9356DC);
   background-clip: border-box;
   -webkit-background-clip: text;
@@ -353,11 +370,6 @@ a.resto-btn {
   grid-template-columns: repeat(1, 1fr);
   column-gap: 2rem;
   row-gap: 2rem;
-}
-@media (min-width: 64rem) {
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 .card {
@@ -423,7 +435,9 @@ a.resto-btn {
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0;
+  opacity: 1;
+  left: 302px;
+  top: 27px;
 }
 .card-like {
   background-color: white !important;
@@ -431,6 +445,33 @@ a.resto-btn {
 
 i.far.fa-heart {
   font-size: 1.5rem;
+  margin-right: -4px;
+}
+
+i.fas.fa-heart {
+  transition-duration: 0.25s;
+  font-size: 1.59rem;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  margin: 0 0px 0 -24px;
+}
+
+.menu-like,
+.overheart::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition-duration: 0.25s;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: lighten;
 }
 
 a.footer-mentions {
@@ -461,7 +502,7 @@ i.footer__icon.fas.fa-hands-helping {
     box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
   }
 
-  .menu-btn::before {
+  .menu-btn::after {
     opacity: 0;
     transition: 0.5s;
     content: "";
@@ -473,6 +514,44 @@ i.footer__icon.fas.fa-hands-helping {
     background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
   }
 }
+.menu__btn {
+  height: 2rem;
+  width: 2rem;
+  background-color: initial;
+  border: 0 solid transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  background-color: #000;
+}
+
+.menu__btn::before, .menu__like {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.menu__btn::before {
+  opacity: 0;
+  transition: 0.5s;
+  content: "";
+  background: linear-gradient(0deg, #9356dc, #ff79da);
+}
+
+.menu__like {
+  transition-duration: 0.25s;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: lighten;
+}
+
 .header--withBackArrow {
   position: relative;
 }
@@ -557,6 +636,23 @@ i.footer__icon.fas.fa-hands-helping {
   opacity: 0;
 }
 
+.menu-like {
+  transition-duration: 0.25s;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: lighten;
+}
+
+.menu-btn::before, .menu-like {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 .submenus {
   display: grid;
 }
@@ -592,6 +688,10 @@ h3.submenu__title {
   font-weight: normal;
   position: relative;
   padding-bottom: 0.5rem;
+}
+
+.menu-btn {
+  cursor: pointer;
 }
 
 .menuItem {
@@ -744,8 +844,35 @@ h3.submenu__title {
   transition: opacity 250ms;
 }
 
+.menuItem-confirmation {
+  background-color: #99E2D0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+
 i.fas.fa-check-circle {
   display: none;
+}
+
+.menu__btn::before, .menu__like {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.menu__like {
+  transition-duration: 0.25s;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  mix-blend-mode: lighten;
 }
 
 /*# sourceMappingURL=style.css.map */
