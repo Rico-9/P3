@@ -154,6 +154,24 @@ span.location-text {
         box-shadow: 0.25rem 0.25rem 10px rgb(0 0 0 / 25%);
         cursor: pointer;
       }
+
+      .resto-btn::after {
+        content: "";
+        position: absolute;
+        border-radius: 30px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(#9356DC, #ae80e5);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }
+
+      tuto-icon:hover {
+        color: red;
+      }
   
       @media (min-width:64rem){
         flex: 1;
@@ -245,17 +263,17 @@ span.location-text {
   }
 
   .resto-btn::after {
-    content: "";
-    position: absolute;
-    border-radius: 30px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(#9356DC, #ae80e5);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 250ms;
+      content: "";
+      position: absolute;
+      border-radius: 30px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(#9356DC, #ae80e5);
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 250ms;
   }
 
   .i.far.fa-heart {
@@ -277,15 +295,9 @@ span.location-text {
 }
 
   .cards{
-    display: grid;
     grid-template-columns: repeat(1, 1fr);
     column-gap: 2rem;
     row-gap: 2rem;
-  }
-
-    @media (min-width:64rem){
-
-  }
 
   .card{
     background-color: white;
@@ -294,6 +306,8 @@ span.location-text {
     text-decoration: none;
     color: inherit;
     display: block;
+    box-shadow: 2px 2px 7px #d3d3d3;
+  }
   
     &-img{
       height: 12rem;
@@ -372,6 +386,10 @@ span.location-text {
     margin-right: -4px;
 }
 
+.footer{
+  margin-top: 30px;
+}
+
   a.footer-mentions {
     color: #fff;
     text-decoration: none;
@@ -385,5 +403,4 @@ i.footer__icon.fas.fa-hands-helping {
   margin-right: 10px;
   margin-left: -6px;
 }
-
 
