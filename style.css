@@ -54,6 +54,7 @@ body, html {
 
 .footer {
   background-color: #353535;
+  margin-top: 30px;
 }
 .footer .container {
   display: flex;
@@ -115,7 +116,7 @@ body, html {
   animation: jump 1s;
   animation-iteration-count: 1;
 }
-.loader-itemContainer {
+.loader-item-Container {
   display: flex;
   width: 5rem;
   justify-content: space-between;
@@ -239,6 +240,23 @@ span.location-text {
 .tuto-step:hover {
   background-color: f6f6f6;
 }
+.tuto-step a.resto-btn {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: white;
+  background-color: #686868;
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9) 0%, rgba(255, 121, 218, 0.9) 100%);
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.tuto-step .fa-mobile-alt::before {
+  content: "\f3cd";
+}
 @media (min-width: 64rem) {
   .tuto-step {
     flex: 1;
@@ -276,17 +294,14 @@ span.location-text {
 
 .tuto-icon.fas.fa-mobile-alt {
   margin-top: 3px;
-  color: #9356DC;
 }
 
 .tuto-icon.fas.fa-list-ul {
   margin-top: 3px;
-  color: #9356DC;
 }
 
 .tuto-icon.fas.fa-store {
   margin-top: 3px;
-  color: #9356DC;
 }
 
 .fa-mobile-alt:before {
@@ -304,33 +319,23 @@ span.text {
 
 .restaurants {
   background-color: #f6f6f6;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 6rem;
+  margin-bottom: -2rem;
 }
 
 a.resto-btn {
-  font-weight: 500;
-  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-  background-color: #686868;
+  border: 0;
   padding: 0.75rem 1.5rem;
+  font-weight: 500;
   font-size: 1.1rem;
   border-radius: 100px;
-  color: #fff;
+  color: white;
+  background-color: #686868;
+  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9) 0%, rgba(255, 121, 218, 0.9) 100%);
   cursor: pointer;
   transition-duration: 0.25s;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
-}
-
-.resto-btn {
-  font-weight: 500;
-  background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-  background-color: #686868;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.1rem;
-  border-radius: 100px;
-  color: #fff;
   cursor: pointer;
-  transition-duration: 0.25s;
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
 }
 
 .resto-btn::after {
@@ -347,7 +352,7 @@ a.resto-btn {
   transition: opacity 250ms;
 }
 
-.i .far.fa-heart {
+.i.far.fa-heart {
   font-size: 1.5rem;
   position: absolute;
   right: 25px;
@@ -363,6 +368,31 @@ a.resto-btn {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
+}
+
+span.hoverheart:hover .far.fa-heart {
+  display: none;
+}
+
+span.hoverheart:hover .fas.fa-heart {
+  opacity: 1;
+}
+
+li.tuto-step:hover i {
+  color: #9356DC;
+}
+
+li.tuto-step:hover {
+  background-color: #f6f6f6;
+}
+
+img.card-img {
+  height: 12rem;
+  width: 100%;
+  border: 0 solid transparent;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: none;
+  object-fit: cover;
 }
 
 .cards {
@@ -439,8 +469,22 @@ a.resto-btn {
   left: 302px;
   top: 27px;
 }
+.card-fas.fa-heart {
+  transition-duration: 0.25s;
+  font-size: 1.59rem;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  margin: 0 0px 0 -24px;
+}
 .card-like {
   background-color: white !important;
+}
+
+a.card {
+  margin-top: 30px;
 }
 
 i.far.fa-heart {
@@ -459,19 +503,31 @@ i.fas.fa-heart {
   margin: 0 0px 0 -24px;
 }
 
-.menu-like,
-.overheart::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+.menu-like {
   transition-duration: 0.25s;
   background-color: #f6f6f6;
   display: flex;
   align-items: center;
   justify-content: center;
   mix-blend-mode: lighten;
+}
+
+.menu-btn::before, .menu-like {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.card-badge {
+  background-color: #99e2d0;
+  color: #1b6150;
+  padding: 0.5rem;
+  border-radius: 0.125rem;
+  position: absolute;
+  top: 1rem;
+  right: 0.75rem;
 }
 
 a.footer-mentions {
@@ -486,70 +542,6 @@ i.footer__icon.fas.fa-utensils {
 i.footer__icon.fas.fa-hands-helping {
   margin-right: 10px;
   margin-left: -6px;
-}
-
-@media only screen and (max-width: 768px) {
-  .resto-btn {
-    font-weight: 500;
-    background-image: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
-    background-color: #686868;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-    border-radius: 100px;
-    color: #fff;
-    cursor: pointer;
-    transition-duration: 0.25s;
-    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
-  }
-
-  .menu-btn::after {
-    opacity: 0;
-    transition: 0.5s;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
-  }
-}
-.menu__btn {
-  height: 2rem;
-  width: 2rem;
-  background-color: initial;
-  border: 0 solid transparent;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: relative;
-  background-color: #000;
-}
-
-.menu__btn::before, .menu__like {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.menu__btn::before {
-  opacity: 0;
-  transition: 0.5s;
-  content: "";
-  background: linear-gradient(0deg, #9356dc, #ff79da);
-}
-
-.menu__like {
-  transition-duration: 0.25s;
-  background-color: #f6f6f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  mix-blend-mode: lighten;
 }
 
 .header--withBackArrow {
@@ -617,7 +609,7 @@ i.footer__icon.fas.fa-hands-helping {
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
+  background: linear-gradient(0deg, #9356dc, #ff79da);
 }
 .menu-like {
   transition-duration: 0.25s;
@@ -634,23 +626,6 @@ i.footer__icon.fas.fa-hands-helping {
 }
 .menu-btn:hover .menu-like--noBg {
   opacity: 0;
-}
-
-.menu-like {
-  transition-duration: 0.25s;
-  background-color: #f6f6f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  mix-blend-mode: lighten;
-}
-
-.menu-btn::before, .menu-like {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
 }
 
 .submenus {
@@ -684,7 +659,7 @@ i.footer__icon.fas.fa-hands-helping {
   bottom: 0;
 }
 
-h3.submenu__title {
+h3.submenu-title {
   font-weight: normal;
   position: relative;
   padding-bottom: 0.5rem;
@@ -844,35 +819,8 @@ h3.submenu__title {
   transition: opacity 250ms;
 }
 
-.menuItem-confirmation {
-  background-color: #99E2D0;
-  margin: -1rem -5rem -1rem 1rem;
-  width: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition-duration: 0.5s;
-}
-
 i.fas.fa-check-circle {
   display: none;
-}
-
-.menu__btn::before, .menu__like {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-.menu__like {
-  transition-duration: 0.25s;
-  background-color: #f6f6f6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  mix-blend-mode: lighten;
 }
 
 /*# sourceMappingURL=style.css.map */
