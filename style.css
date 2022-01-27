@@ -34,7 +34,7 @@ body, html {
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: auto;
   position: relative;
 }
@@ -373,17 +373,15 @@ a.resto-btn {
 span.hoverheart:hover .far.fa-heart {
   display: none;
 }
-
 span.hoverheart:hover .fas.fa-heart {
   opacity: 1;
 }
 
+li.tuto-step:hover {
+  background-color: #F5EDFF;
+}
 li.tuto-step:hover i {
   color: #9356DC;
-}
-
-li.tuto-step:hover {
-  background-color: #f6f6f6;
 }
 
 img.card-img {
