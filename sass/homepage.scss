@@ -137,7 +137,7 @@ font-weight: bold;
 
     
     &:hover{
-      background-color: f6f6f6;
+      background-color: #f6f6f6;
     }
 
     a.resto-btn {
@@ -213,7 +213,7 @@ font-weight: bold;
 
 .fa-mobile-alt:before {
 content: "\f3cd";
-background-color: linear-gradient(#9356DC, #ae80e5);
+background-image: linear-gradient(#9356DC, #ae80e5);
 }
 
 .tuto-icon fas fa-mobile-alt:hover {
@@ -277,18 +277,20 @@ a.resto-btn {
   opacity: 0;
 }
 
-span.hoverheart:hover .far.fa-heart {
-  display: none;
+span.hoverheart:hover {
+  .far.fa-heart {
+    display: none;
+  }
 
-  &-.fas.fa-heart {
+  .fas.fa-heart {
     opacity: 1;
   }
 }
 
 li.tuto-step:hover {
-  background-color: #f6f6f6;
+  background-color: #F5EDFF;
 
-  &-i {
+  i {
     color: #9356DC;
   }
 }
