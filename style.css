@@ -44,6 +44,7 @@ body, html {
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   position: relative;
   z-index: 1000;
+  margin-bottom: 0px;
 }
 .header-logo {
   font-family: "Shrikhand", "cursive";
@@ -306,7 +307,6 @@ span.location-text {
 
 .fa-mobile-alt:before {
   content: "\f3cd";
-  background-image: linear-gradient(#9356DC, #ae80e5);
 }
 
 .tuto-icon fas fa-mobile-alt:hover {
@@ -564,7 +564,6 @@ i.footer__icon.fas.fa-hands-helping {
   max-height: 32rem;
   width: 100%;
   object-fit: cover;
-  border-radius: 20px 20px 0 0;
 }
 
 .menu {
